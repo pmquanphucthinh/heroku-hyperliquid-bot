@@ -1,0 +1,31 @@
+{
+  "name": "Hyperliquid Telegram Bot",
+  "description": "Bot kiểm tra vị thế Hyperliquid và gửi thông báo Telegram.",
+  "repository": "https://github.com/pmquanphucthinh/heroku-hyperliquid-bot",
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Token bot Telegram",
+      "required": true
+    },
+    "TELEGRAM_CHAT_ID": {
+      "description": "Chat ID của Telegram bot",
+      "required": true
+    },
+    "GOOGLE_SHEET_URL": {
+      "description": "URL Google Sheet chứa danh sách user_address",
+      "required": true
+    },
+    "GOOGLE_CREDENTIALS_JSON": {
+      "description": "Google Service Account JSON (định dạng chuỗi JSON)",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "echo 'Deploy hoàn tất! Bot đang chạy...'"
+  }
+}
